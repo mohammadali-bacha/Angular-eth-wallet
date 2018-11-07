@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 
 
@@ -9,10 +10,10 @@ import {MatInputModule} from '@angular/material/input';
   declarations: [],
   imports: [
     CommonModule,
-    MatButtonModule, MatInputModule
+    MatButtonModule, MatInputModule,
   ],
   exports: [
-    MatButtonModule, MatInputModule
+    MatButtonModule, MatInputModule,
   ],
 })
 export class UiModule { }
