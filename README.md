@@ -1,5 +1,17 @@
 # NgEthWallet
 
+Objectif : "Créer un wallet web avec Angular et ethers.js"
+
+Description : "L'utilisateur doit pouvoir créer un compte avec une liste de 12 mots (HDWallet), stocker la clef privée encryptée en local storage sur son navigateur, et signer des transactions. La connexion à Ethereum se fera avec Infura".
+
+Avec la stack : 
+- Front-end : Angular (version 7)
+- Design System : Angular Material (version 7)
+- Provider Ethereum : ethers.js (version 4)
+- State management : Akita (version 1.9)
+- Noeud Ethereum : Infura
+
+---------------------
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
 
 ## Development server
