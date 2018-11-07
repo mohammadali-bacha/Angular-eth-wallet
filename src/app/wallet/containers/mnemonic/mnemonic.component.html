@@ -2,33 +2,26 @@
 <span *ngFor="let mnemonic of (mnemonic$ | async)">{{mnemonic}}</span>
 </p>
 
-<mat-form-field class="example-full-width">
-  <textarea matInput placeholder="Leave a comment"></textarea>
-</mat-form-field>
-</form>
-
-<mat-form-field class="example-full-width">
-  <textarea matInput placeholder="Leave a comment"></textarea>
-</mat-form-field>
-</form>
-
-<mat-form-field class="example-full-width">
-  <textarea matInput placeholder="Leave a comment"></textarea>
-</mat-form-field>
-</form>
-
-
 <form class="example-form">
-  <mat-form-field class="example-full-width">
+
+<mat-form-field class="example-full-width">
+  <textarea matInput placeholder="Put the word 5"></textarea>
+</mat-form-field>
+
+<mat-form-field class="example-full-width"></mat-form-field>
+  <textarea matInput placeholder="Put the word 9"></textarea>
+</mat-form-field>
+
+<mat-form-field class="example-full-width"></mat-form-field>
+  <textarea matInput placeholder="Put the word 2"></textarea>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
     <input matInput placeholder="Password" value="Password">
   </mat-form-field>
-
-
-
+  
+</form>
 
 <div class="example-button-row">
-
 <button mat-button color="primary" (click)="update()">Vailder</button>
-
-
 </div>
