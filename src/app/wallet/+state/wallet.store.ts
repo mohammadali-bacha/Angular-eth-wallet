@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
+import { ethers } from 'ethers';
+
 
 export interface WalletState {
   mnemonic: string;
@@ -20,4 +22,11 @@ export class WalletStore extends Store<WalletState> {
   }
 
 }
+
+
+
+
+
+
+
 

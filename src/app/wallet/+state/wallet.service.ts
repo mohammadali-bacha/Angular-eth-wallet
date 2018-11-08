@@ -11,5 +11,12 @@ export class WalletService {
   }
   setMnemonic(mnemonic: string) {
     this.store.update({mnemonic});
+  }
+    genereateRandomMnemonic() {
+      return ethers.Wallet.createRandom().mnemonic;
+ }
+
 }
-}
+
+
+

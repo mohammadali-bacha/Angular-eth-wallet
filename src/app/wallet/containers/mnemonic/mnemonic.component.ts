@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WalletService, WalletQuery } from '../../+state';
 import { Observable } from 'rxjs';
+import { ethers } from 'ethers';
+
 
 @Component({
   selector: 'app-mnemonic',
@@ -22,4 +24,8 @@ this.mnemonic$ = this.query.mnemonic$;
   public update() {
     this.service.setMnemonic('salut les amis');
   }
+  public generateRandomMnemonic() {
+    return this.service.genereateRandomMnemonic();
+  }
 }
+
