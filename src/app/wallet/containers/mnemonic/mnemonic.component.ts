@@ -31,6 +31,7 @@ this.firstFormGroup = this._formBuilder.group({
 this.secondFormGroup = this._formBuilder.group({
   secondCtrl: ['', Validators.required]
 });
+
   }
   public update() {
     this.service.setMnemonic(this.generateRandomMnemonic());
