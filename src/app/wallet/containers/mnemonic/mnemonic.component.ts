@@ -3,7 +3,7 @@ import { WalletService, WalletQuery } from '../../+state';
 import { Observable } from 'rxjs';
 import { ethers } from 'ethers';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MatStepperModule} from '@angular/material/stepper';
+
 
 @Component({
   selector: 'app-mnemonic',
@@ -12,15 +12,15 @@ import {MatStepperModule} from '@angular/material/stepper';
 })
 export class MnemonicComponent implements OnInit {
   isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+   firstFormGroup: FormGroup;
+   secondFormGroup: FormGroup;
 
  public mnemonic$: Observable<string[]>;
 
   constructor(
     private service: WalletService,
     private query: WalletQuery,
-    private _formBuilder: FormBuilder,
+    private _formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {

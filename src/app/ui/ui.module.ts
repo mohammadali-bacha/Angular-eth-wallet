@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+ // https://stackoverflow.com/questions/39152071/cant-bind-to-formgroup-since-it-isnt-a-known-property-of-form
+
+import {FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkTableModule} from '@angular/cdk/table';
@@ -48,6 +50,8 @@ import {
   imports: [
     CommonModule,
     MatButtonModule, MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatButtonModule,
@@ -92,6 +96,8 @@ import {
     MatTooltipModule,
     MatTreeModule,
     ScrollingModule,
+    FormsModule,
+    ReactiveFormsModule  //  https://stackoverflow.com/questions/39152071/cant-bind-to-formgroup-since-it-isnt-a-known-property-of-form
   ],
 })
 export class UiModule { }
