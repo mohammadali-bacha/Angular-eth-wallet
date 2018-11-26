@@ -1,19 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, /*ErrorStateMatcher*/ } from '@angular/core';
 import { WalletService, WalletQuery } from '../../+state';
 import { Observable } from 'rxjs';
 import { ethers } from 'ethers';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-
+import {FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-mnemonic',
   templateUrl: './mnemonic.component.html',
   styleUrls: ['./mnemonic.component.css']
 })
+
 export class MnemonicComponent implements OnInit {
   isLinear = false;
    firstFormGroup: FormGroup;
    secondFormGroup: FormGroup;
+   thirdFormGroup: FormGroup;
 
  public mnemonic$: Observable<string[]>;
 
@@ -30,6 +31,9 @@ this.firstFormGroup = this._formBuilder.group({
 });
 this.secondFormGroup = this._formBuilder.group({
   secondCtrl: ['', Validators.required]
+});
+this.thirdFormGroup = this._formBuilder.group({
+  thirdCtrl: ['', Validators.required]
 });
 
   }

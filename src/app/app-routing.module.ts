@@ -4,7 +4,6 @@ import { MnemonicComponent } from './wallet/containers/mnemonic/mnemonic.compone
 
 const routes: Routes =  [
   { path: '', component: MnemonicComponent },
-
 ];
 
 @NgModule({
