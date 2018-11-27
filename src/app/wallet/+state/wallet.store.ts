@@ -7,6 +7,7 @@ export interface WalletState {
   mnemonic: string;
 }
 
+
 export function createInitialState(): WalletState {
   return {
     mnemonic: 'coucou'

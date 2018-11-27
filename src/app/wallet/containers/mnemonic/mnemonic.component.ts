@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { ethers } from 'ethers';
 import {FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm} from '@angular/forms';
 import {map, startWith} from 'rxjs/operators';
-import {ErrorStateMatcher} from '@angular/material/core';
+// import {ErrorStateMatcher} from '@angular/material/core';
 
 @Component({
   selector: 'app-mnemonic',
@@ -12,9 +12,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
   styleUrls: ['./mnemonic.component.css']
 })
 
-
 export class MnemonicComponent implements OnInit {
-
 
   public update() {
     this.service.setMnemonic(this.generateRandomMnemonic());
@@ -66,6 +64,7 @@ const filterValue = value.toLowerCase();
 
 return this.options.filter(option => option.toLowerCase().includes(filterValue));
 }
+
   }
 
 

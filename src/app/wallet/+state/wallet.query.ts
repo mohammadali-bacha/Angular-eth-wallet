@@ -9,6 +9,8 @@ export class WalletQuery extends Query<WalletState> {
     super(store);
   }
   get mnemonic$() {
-    return this.select((state) => state.mnemonic.split(''));
+    return this.select((state) => state.mnemonic.split(' '));
   }
+
 }
+// const mnemonicArray = this.mnemonic$.split(' ');

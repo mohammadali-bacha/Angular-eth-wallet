@@ -10,4 +10,7 @@ body {
   .example-full-width {
     width: 100%;
   }
-  
+  span {
+    margin-right: 11px;
+    margin-left: 20px;
+}
