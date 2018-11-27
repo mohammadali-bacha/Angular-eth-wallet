@@ -13,4 +13,3 @@ export class WalletQuery extends Query<WalletState> {
   }
 
 }
-// const mnemonicArray = this.mnemonic$.split(' ');

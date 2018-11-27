@@ -7,22 +7,18 @@
     </div>
 
 <!-- <form class="example-form"> -->
-    <mat-form-field class="example-full-width">
-      <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
       <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let mnemonic of (mnemonic$ | async)" [value]="mnemonic">
           {{mnemonic}}
         </mat-option>
       </mat-autocomplete>
-    </mat-form-field>
-  <!-- </form> -->
 <!--  -->
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>Word 1 of Mnemonic</ng-template>
       <mat-form-field>
-        <input matInput placeholder="Put the word 1" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <input matInput placeholder="Put the word 1" matInput [formControl]="myControl" [matAutocomplete]="auto" [errorStateMatcher]="matcher">
       </mat-form-field>
       <div>
         <button mat-button matStepperNext>Next</button>
@@ -33,7 +29,7 @@
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Word 9 of Mnemonic</ng-template>
       <mat-form-field>
-        <input matInput placeholder="Put the word 9" fatInput [formControl]="myControl" [matAutocomplete]="auto">
+        <input matInput placeholder="Put the word 9" fatInput [formControl]="myControl" [matAutocomplete]="auto" [errorStateMatcher]="matcher">
         <!-- <mat-select placeholder="Choose one" [formControl]="selected" [errorStateMatcher]="matcher"> -->
         <!-- <option value=""></option>
         <option value="valid" selected>Valid option</option>
