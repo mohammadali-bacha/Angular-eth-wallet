@@ -2,25 +2,30 @@
 <span *ngFor="let mnemonic of (mnemonic$ | async)">{{mnemonic}}</span>
 </p>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-
      <div class="example-button-row">
     <button mat-button color="primary" (click)="update()">Generer</button>
     </div>
-
 <div class="example-button-row">
 <button mat-button color="primary" >Valider</button>
 </div>
 
-<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-</button> -->
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let mnemonic of (mnemonic$ | async)" [value]="mnemonic">
+          {{mnemonic}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+<!--  -->
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>Word 1 of Mnemonic</ng-template>
       <mat-form-field>
-        <input matInput placeholder="Put the word 1" formControlName="firstCtrl" required>
+        <input matInput placeholder="Put the word 1" matInput [formControl]="myControl" [matAutocomplete]="auto">
       </mat-form-field>
       <div>
         <button mat-button matStepperNext>Next</button>
@@ -31,7 +36,16 @@
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Word 9 of Mnemonic</ng-template>
       <mat-form-field>
-        <input matInput placeholder="Put the word 9" formControlName="secondCtrl" required>
+        <input matInput placeholder="Put the word 9" fatInput [formControl]="myControl" [matAutocomplete]="auto">
+        <!-- <mat-select placeholder="Choose one" [formControl]="selected" [errorStateMatcher]="matcher"> -->
+        <!-- <option value=""></option>
+        <option value="valid" selected>Valid option</option>
+        <option value="invalid">Invalid option</option> -->
+      <!-- </select> -->
+      <!-- <mat-error *ngIf="nativeSelectFormControl.hasError('required')">You must make a selection</mat-error>
+      <mat-error *ngIf="nativeSelectFormControl.hasError('pattern') && !nativeSelectFormControl.hasError('required')">
+        Your selection is invalid
+      </mat-error> -->
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>
@@ -51,7 +65,6 @@
       </div>
     </form>
   </mat-step> -->
-
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
     You are now done.
@@ -61,31 +74,3 @@
     </div>
   </mat-step>
 </mat-horizontal-stepper>
-
-
-<form class="example-form">
-    <mat-form-field class="example-full-width">
-      <input type="text" placeholder="Assignee" aria-label="Assignee" matInput [formControl]="myControl" [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-          {{option.name}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-  </form>
-
-<!-- <h4>mat-select</h4>
-<mat-form-field>
-  <mat-select placeholder="Choose one" [formControl]="selected" [errorStateMatcher]="matcher">
-    <mat-option>Clear</mat-option>
-    <mat-option value="valid">Valid option</mat-option>
-    <mat-option value="invalid">Invalid option</mat-option>
-    <mat-option value="invalid">Invalid option</mat-option>
-
-  </mat-select>
-  <mat-hint>Errors appear instantly!</mat-hint>
-  <mat-error *ngIf="selected.hasError('required')">You must make a selection</mat-error>
-  <mat-error *ngIf="selected.hasError('pattern') && !selected.hasError('required')">
-    Your selection is invalid
-  </mat-error>
-</mat-form-field> -->

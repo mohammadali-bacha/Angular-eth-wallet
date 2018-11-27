@@ -1,5 +1,6 @@
-import { NgModule /*, ErrorStateMatcher*/ } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+// import {ErrorStateMatcher} from '@angular/material/core';
 
  // https://stackoverflow.com/questions/39152071/cant-bind-to-formgroup-since-it-isnt-a-known-property-of-form
 
@@ -10,10 +11,10 @@ import {FormBuilder, FormGroup,
   NgForm, FormControl,
   FormGroupDirective,
      } from '@angular/forms';
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import {ScrollingModule} from '@angular/cdk/scrolling';
-import {CdkTableModule} from '@angular/cdk/table';
-import {CdkTreeModule} from '@angular/cdk/tree';
+// import {DragDropModule} from '@angular/cdk/drag-drop';
+// import {ScrollingModule} from '@angular/cdk/scrolling';
+// import {CdkTableModule} from '@angular/cdk/table';
+// import {CdkTreeModule} from '@angular/cdk/tree';
 import {
   MatStepperModule,
   MatAutocompleteModule,
@@ -58,16 +59,17 @@ import {
     CommonModule,
     MatButtonModule, MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // ErrorStateMatcher
   ],
   exports: [
     MatButtonModule,
     MatSelectModule,
     MatInputModule,
     MatStepperModule,
-    CdkTableModule,
-    CdkTreeModule,
-    DragDropModule,
+    // CdkTableModule,
+    // CdkTreeModule,
+    // DragDropModule,
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,
@@ -103,7 +105,7 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    ScrollingModule,
+    // ScrollingModule,
     FormsModule,
     // ErrorStateMatcher,
     ReactiveFormsModule  //  https://stackoverflow.com/questions/39152071/cant-bind-to-formgroup-since-it-isnt-a-known-property-of-form
