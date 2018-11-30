@@ -4,39 +4,39 @@ import { Observable } from 'rxjs';
 import { ethers } from 'ethers';
 import {FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm} from '@angular/forms';
 import {map, startWith} from 'rxjs/operators';
-// import {ErrorStateMatcher} from '@angular/material/core';
+import {ErrorStateMatcher} from '@angular/material/core';
 
 /** Error when invalid control is dirty, touched, or submitted. */
-// export class MyErrorStateMatcher implements ErrorStateMatcher {
-//   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-//     const isSubmitted = form && form.submitted;
-//     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-//   }
-// }
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-mnemonic',
   templateUrl: './mnemonic.component.html',
   styleUrls: ['./mnemonic.component.css']
 })
-// export class SelectErrorStateMatcherExample {
-//   selected = new FormControl('valid', [
-//     Validators.required,
-//     Validators.pattern('valid'),
-//   ]);
+export class SelectErrorStateMatcherExample {
+  selected = new FormControl('valid', [
+    Validators.required,
+    Validators.pattern('valid'),
+  ]);
 
-//   selectFormControl = new FormControl('valid', [
-//     Validators.required,
-//     Validators.pattern('valid'),
-//   ]);
+  selectFormControl = new FormControl('valid', [
+    Validators.required,
+    Validators.pattern('valid'),
+  ]);
 
-//   nativeSelectFormControl = new FormControl('valid', [
-//     Validators.required,
-//     Validators.pattern('valid'),
-//   ]);
+  nativeSelectFormControl = new FormControl('valid', [
+    Validators.required,
+    Validators.pattern('valid'),
+  ]);
 
-//   matcher = new MyErrorStateMatcher();
-// }
+  matcher = new MyErrorStateMatcher();
+}
 export class MnemonicComponent implements OnInit {
 
   public update() {
